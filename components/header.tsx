@@ -32,18 +32,23 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            {['Home', 'Products', 'About', 'Contact'].map((item, index) => (
+            {[
+              { name: 'Home', path: '/' },
+              { name: 'Products', path: '/products' },
+              { name: 'About', path: '/about' },
+              { name: 'Contact', path: '/contact' }
+            ].map((item, index) => (
               <motion.div
-                key={item}
+                key={item.name}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Link
-                  href={`#${item.toLowerCase()}`}
+                  href={item.path}
                   className="text-sm font-medium transition-colors hover:text-primary"
                 >
-                  {item}
+                  {item.name}
                 </Link>
               </motion.div>
             ))}
@@ -77,14 +82,19 @@ export default function Header() {
           className="md:hidden border-t"
         >
           <nav className="container px-4 py-4 flex flex-col space-y-4">
-            {['Home', 'Products', 'About', 'Contact'].map((item) => (
+            {[
+              { name: 'Home', path: '/' },
+              { name: 'Products', path: '/products' },
+              { name: 'About', path: '/about' },
+              { name: 'Contact', path: '/contact' }
+            ].map((item) => (
               <Link
-                key={item}
-                href={`#${item.toLowerCase()}`}
+                key={item.name}
+                href={item.path}
                 className="text-sm font-medium transition-colors hover:text-primary"
                 onClick={() => setIsOpen(false)}
               >
-                {item}
+                {item.name}
               </Link>
             ))}
             <Button variant="default" size="sm" className="w-full">
