@@ -1,10 +1,11 @@
 'use client'
 
-import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from './ui/button'
 import { Card, CardContent } from './ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs'
+import Image from 'next/image'
 
 // Product data
 const categories = [
@@ -157,10 +158,12 @@ export default function Products() {
                 transition={{ duration: 0.5 }}
                 className="aspect-square rounded-xl overflow-hidden bg-gray-100 shadow-lg"
               >
-                <img 
+                <Image 
                   src={selectedProduct.image} 
                   alt={selectedProduct.name} 
                   className="w-full h-full object-cover"
+                  width={500}
+                  height={500}
                 />
               </motion.div>
               
@@ -249,10 +252,12 @@ export default function Products() {
                       >
                         <Card className="overflow-hidden h-full">
                           <div className="aspect-video overflow-hidden">
-                            <img 
+                            <Image 
                               src={product.image} 
                               alt={product.name} 
                               className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
+                              width={400}
+                              height={300}
                             />
                           </div>
                           <CardContent className="p-6">

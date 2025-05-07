@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { Button } from './ui/button'
-import { CheckCircle } from 'lucide-react'
 
 export default function About() {
   return (
@@ -40,7 +39,7 @@ export default function About() {
                 Founded with a vision to revolutionize the household products industry, PULPWOOD has grown from a small family business to a global manufacturer of premium disposable and household essentials.
               </p>
               <p className="text-gray-500">
-                For over a decade, we've been committed to creating products that combine quality, sustainability, and innovation. Our journey has been defined by our dedication to excellence and our passion for creating products that enhance everyday living.
+                For over a decade, we&apos;ve been committed to creating products that combine quality, sustainability, and innovation. Our journey has been defined by our dedication to excellence and our passion for creating products that enhance everyday living.
               </p>
             </motion.div>
             <motion.div
