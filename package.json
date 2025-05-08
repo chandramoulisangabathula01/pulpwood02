@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+
+
     "@emailjs/browser": "^4.4.1",
-    "@motionone/react": "^11.0.0",
+
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-tabs": "^1.1.9",
     "@studio-freight/lenis": "^1.0.42",
