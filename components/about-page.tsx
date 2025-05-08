@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Button } from './ui/button'
 import { Leaf, Recycle, Award } from 'lucide-react'
+import Image from 'next/image'
 
 export default function About() {
   return (
@@ -68,13 +69,13 @@ export default function About() {
               className="relative rounded-2xl overflow-hidden shadow-2xl group hover:shadow-3xl transition-shadow duration-300 lg:col-span-2"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-forest-green/10 to-earth-brown/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <img 
+              <Image 
                 src="/images/pulpwood aboutus.png" 
-                alt="Our Story - Pulpwood's Journey" 
+                alt="Our Story - Pulpwood&apos;s Journey" 
                 className="object-cover w-full h-[500px] transform group-hover:scale-105 transition-transform duration-300"
-                width={200}
-                height={200}
-                loading="lazy"
+                width={800}
+                height={500}
+                priority
               />
             </motion.div>
           </div>
@@ -184,17 +185,19 @@ export default function About() {
                   <div className="absolute inset-0 bg-gradient-to-br from-forest-green to-earth-brown rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                   <div className="w-full h-full rounded-full overflow-hidden border-2 border-forest-green/20 p-1">
                     <div className="w-full h-full rounded-full overflow-hidden bg-gray-100">
-                      <img 
+                      <Image 
                         src={member.image} 
                         alt={member.name} 
                         className="w-full h-full object-cover"
+                        width={160}
+                        height={160}
                       />
                     </div>
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-forest-green mb-2">{member.name}</h3>
                 <p className="text-earth-brown font-medium mb-4">{member.role}</p>
-                <p className="text-gray-600 italic text-sm">"{member.quote}"</p>
+                <p className="text-gray-600 italic text-sm">&quot;{member.quote}&quot;</p>
               </motion.div>
             ))}
           </div>
@@ -252,10 +255,12 @@ export default function About() {
                 >
                   <div className="relative h-64 rounded-xl overflow-hidden mb-4">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                    <img
+                    <Image
                       src={step.image}
                       alt={step.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      width={300}
+                      height={200}
                     />
                     <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
                       <h3 className="text-lg font-bold text-white mb-1">{step.title}</h3>

@@ -1,11 +1,11 @@
 'use client'
 
-import { useState, useRef, useEffect, ChangeEvent, FormEvent } from 'react'
+import { useState, ChangeEvent, FormEvent } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
-import { Mail, Phone, MapPin, Globe, Clock, Facebook, Twitter, Instagram, Youtube, ArrowRight, } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Instagram, Youtube, ArrowRight } from 'lucide-react'
 
 interface FormData {
   name: string;
@@ -168,7 +168,7 @@ export default function ContactPage() {
             className="lg:w-3/5 bg-white p-8 md:p-12"
           >
             <div className="max-w-xl mx-auto">
-              <h2 className="text-3xl font-bold text-forest-green mb-2">Let's create a greener future</h2>
+              <h2 className="text-3xl font-bold text-forest-green mb-2">Let&apos;s create a greener future</h2>
               <h3 className="text-3xl font-bold text-earth-brown mb-6">with Pulpwood</h3>
               <p className="text-gray-600 mb-8">
                 Share your requirements, and our team will help you choose the best eco-friendly products for your needs.

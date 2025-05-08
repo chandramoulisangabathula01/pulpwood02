@@ -12,16 +12,16 @@ const images = [
   '/images/balls.png?height=400&width=400',
 ]
 
-const catalogs = [
-  {
-    name: 'Pulpwood Company Profile',
-    url: '/catalogs/pulpwood-company-profile.pdf'
-  },
-  {
-    name: 'Pulpwood Product Catalog', 
-    url: '/catalogs/pulpwood-product-catalog.pdf'
-  }
-]
+// const catalogs = [
+//   {
+//     name: 'Pulpwood Company Profile',
+//     url: '/catalogs/pulpwood-company-profile.pdf'
+//   },
+//   {
+//     name: 'Pulpwood Product Catalog', 
+//     url: '/catalogs/pulpwood-product-catalog.pdf'
+//   }
+// ]
 
 const highlights = [
   "100% biodegradable and eco-friendly",
@@ -44,12 +44,12 @@ export default function Hero() {
   }, [])
 
   // Set initial catalog when modal opens
-  useEffect(() => {
-    if (showCatalog) {
-      setSelectedCatalog(catalogs[0].url)
-      setScale(1) // Reset zoom when modal opens
-    }
-  }, [showCatalog])
+  // useEffect(() => {
+  //   if (showCatalog) {
+  //     setSelectedCatalog(catalogs[0].url)
+  //     setScale(1) // Reset zoom when modal opens
+  //   }
+  // }, [showCatalog])
 
   const nextImage = () => setCurrentImage((prev) => (prev + 1) % images.length)
   const prevImage = () => setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
@@ -207,7 +207,7 @@ export default function Hero() {
               </div>
               
               <div className="flex gap-4 h-full">
-                <div className="w-64 space-y-4 border-r pr-4">
+                {/* <div className="w-64 space-y-4 border-r pr-4">
                   {catalogs.map((catalog, index) => (
                     <div key={index} className="flex flex-col gap-2">
                       <button
@@ -227,7 +227,7 @@ export default function Hero() {
                       </a>
                     </div>
                   ))}
-                </div>
+                </div> */}
                 
                 <div className="flex-1 bg-gray-50 rounded-lg overflow-hidden">
                   {selectedCatalog ? (

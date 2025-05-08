@@ -1,6 +1,8 @@
 import { Montserrat, Open_Sans } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/header'
+import LenisProvider from '@/components/lenis-provider'
+import Footer from '@/components/Footer'
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
@@ -14,10 +16,6 @@ const openSans = Open_Sans({
   display: 'swap'
 })
 
-import LenisProvider from '@/components/lenis-provider'
-import { SmoothCursor } from '@/components/ui/smootCursor'
-import Footer from '@/components/Footer'
-
 export default function RootLayout({
   children,
 }: {
@@ -30,7 +28,6 @@ export default function RootLayout({
       </head>
       <body className={`${montserrat.variable} ${openSans.variable} font-sans`}>
         <LenisProvider>
-        {/* <SmoothCursor /> */}
           <Header />
           {children}
           <Footer />
