@@ -10,7 +10,7 @@ import { Textarea } from './ui/textarea'
 export default function Contact() {
   return (
     <section className="py-24">
-      <div className="container px-4 md:px-6">
+      <div className="max-w-screen-xl mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -18,9 +18,9 @@ export default function Contact() {
           viewport={{ once: true }}
           className="max-w-2xl mx-auto text-center"
         >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get in Touch</h2>
-          <p className="mt-4 text-gray-500 dark:text-gray-400">
-            Interested in becoming a distributor or learning more about our products? Contact us today.
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-forest-green">Contact Pulpwood</h2>
+          <p className="mt-4 text-earth-brown dark:text-earth-brown/80">
+            Interested in sustainable tissue and hygiene solutions? Reach out to Pulpwood for eco-friendly products, distribution, or partnership opportunities.
           </p>
         </motion.div>
         <motion.div
@@ -32,12 +32,12 @@ export default function Contact() {
         >
           <form className="grid gap-6">
             <div className="grid gap-4 sm:grid-cols-2">
-              <Input placeholder="Name" />
-              <Input type="email" placeholder="Email" />
+              <Input placeholder="Name" className="border-forest-green focus:border-forest-green focus:ring-forest-green rounded-md py-3" />
+              <Input type="email" placeholder="Email" className="border-forest-green focus:border-forest-green focus:ring-forest-green rounded-md py-3" />
             </div>
-            <Input placeholder="Company" />
-            <Textarea placeholder="Message" className="h-32" />
-            <Button size="lg" className="w-full">Send Message</Button>
+            <Input placeholder="Company / Organization" className="border-forest-green focus:border-forest-green focus:ring-forest-green rounded-md py-3" />
+            <Textarea placeholder="How can we help you?" className="h-32 border-forest-green focus:border-forest-green focus:ring-forest-green rounded-md" />
+            <Button size="lg" className="w-full bg-gradient-to-r from-forest-green to-earth-brown hover:from-forest-green/90 hover:to-earth-brown/90 text-white py-3 rounded-md transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">Send Inquiry</Button>
           </form>
         </motion.div>
       </div>

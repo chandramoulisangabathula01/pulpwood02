@@ -2,6 +2,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 // import { Card, CardContent } from '@/components/ui/card'
 import { Card, CardContent } from './ui/card'
 // import { Button } from '@/components/ui/button'
@@ -26,9 +27,15 @@ const products = [
 ]
 
 export default function ProductShowcase() {
+  const router = useRouter()
+
+  const handleLearnMore = (productName: string) => {
+    router.push(`/products?product=${encodeURIComponent(productName)}`)
+  }
+
   return (
     <section className="py-24">
-      <div className="container px-4 md:px-6">
+      <div className="max-w-screen-xl mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,8 +43,8 @@ export default function ProductShowcase() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Product Lines</h2>
-          <p className="mt-4 text-gray-500 dark:text-gray-400">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-forest-green font-montserrat">Our Product Lines</h2>
+          <p className="mt-4 text-earth-brown font-open-sans">
             Explore our extensive catalog of premium products
           </p>
         </motion.div>
@@ -50,7 +57,7 @@ export default function ProductShowcase() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="overflow-hidden">
+              <Card className="overflow-hidden border-soft-beige hover:shadow-md transition-shadow">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
@@ -61,10 +68,16 @@ export default function ProductShowcase() {
                     className="w-full h-48 object-cover"
                   />
                 </motion.div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{product.name}</h3>
-                  <p className="text-gray-500 dark:text-gray-400 mb-4">{product.description}</p>
-                  <Button variant="outline" className="w-full">Learn More</Button>
+                <CardContent className="p-6 bg-soft-beige/20">
+                  <h3 className="text-xl font-bold mb-2 text-forest-green font-montserrat">{product.name}</h3>
+                  <p className="text-earth-brown font-open-sans mb-4">{product.description}</p>
+                  <Button 
+  variant="outline" 
+  className="w-full border-forest-green text-forest-green hover:bg-forest-green hover:text-white font-montserrat"
+  onClick={() => handleLearnMore(product.name)}
+>
+  Learn More
+</Button>
                 </CardContent>
               </Card>
             </motion.div>

@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header className="fixed w-full z-50 bg-background/80 backdrop-blur-sm border-b">
       <div className="container px-4 md:px-6">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -31,7 +31,7 @@ export default function Header() {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-8">
             {[
               { name: 'Home', path: '/' },
               { name: 'Products', path: '/products' },
@@ -46,7 +46,7 @@ export default function Header() {
               >
                 <Link
                   href={item.path}
-                  className="text-sm font-medium transition-colors hover:text-primary"
+                  className="text-base font-medium transition-all hover:text-primary hover:scale-105 px-3 py-2 rounded-lg hover:bg-background/20"
                 >
                   {item.name}
                 </Link>
@@ -91,7 +91,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.path}
-                className="text-sm font-medium transition-colors hover:text-primary"
+                className="text-base font-medium transition-all hover:text-primary hover:scale-105 px-3 py-2 rounded-lg hover:bg-background/20"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}

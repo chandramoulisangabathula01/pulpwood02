@@ -28,7 +28,7 @@ const categories = [
 export default function ProductCategories() {
   return (
     <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-      <div className="container px-4 md:px-6">
+      <div className="max-w-screen-xl mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,8 +51,9 @@ export default function ProductCategories() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
+              className="w-full"
             >
-              <Card className="overflow-hidden group cursor-pointer">
+              <Card className="overflow-hidden group cursor-pointer w-full">
                 <CardContent className="p-0">
                   <div className="relative">
                     <div className={`absolute inset-0 bg-gradient-to-r ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />

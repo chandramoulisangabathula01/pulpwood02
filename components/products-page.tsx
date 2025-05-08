@@ -123,8 +123,8 @@ export default function Products() {
   return (
     <main className="min-h-screen bg-background pt-20">
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container px-4 md:px-6">
+      {/* <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-screen-xl mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -137,7 +137,7 @@ export default function Products() {
             </p>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Product Detail View */}
       {selectedProduct ? (
@@ -162,7 +162,7 @@ export default function Products() {
                   src={selectedProduct.image} 
                   alt={selectedProduct.name} 
                   className="w-full h-full object-cover"
-                  width={500}
+                  width={250}
                   height={500}
                 />
               </motion.div>
@@ -213,13 +213,13 @@ export default function Products() {
               onValueChange={setSelectedCategory}
               className="w-full"
             >
-              <div className="mb-8">
-                <TabsList className="w-full justify-start overflow-auto pb-2">
+              <div className="mb-8 ">
+                <TabsList className="flex justify-center gap-2 pb-2 mx-auto bg-transparent">
                   {categories.map((category) => (
                     <TabsTrigger 
                       key={category.id} 
-                      value={category.id}
-                      className="text-sm md:text-base px-4 py-2"
+                       value={category.id}
+                      className="text-sm md:text-base px-6 py-3 rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-colors duration-300"
                     >
                       {category.name}
                     </TabsTrigger>

@@ -24,7 +24,7 @@ const initiatives = [
 export default function Sustainability() {
   return (
     <section className="py-24">
-      <div className="container px-4 md:px-6">
+      <div className="max-w-screen-xl mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

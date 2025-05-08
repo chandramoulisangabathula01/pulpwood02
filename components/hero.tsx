@@ -24,11 +24,10 @@ const catalogs = [
 ]
 
 const highlights = [
-  "Premium quality materials and craftsmanship",
-  "Eco-friendly and sustainable production",
-  "Wide range of household essentials",
-  "Competitive pricing for distributors",
-  "Fast shipping worldwide"
+  "100% biodegradable and eco-friendly",
+  "Premium quality virgin tissue",
+  "Household hygiene chemical range",
+  "Bulk packaging options for business"
 ]
 
 export default function Hero() {
@@ -71,7 +70,7 @@ export default function Hero() {
         >
           <source src="/video/bg video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-green/30 to-earth-brown/30 mix-blend-multiply" />
       </div>
 
       <div className="container px-8 md:px-12 relative z-10">
@@ -82,10 +81,10 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="flex flex-col gap-4"
           >
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-black">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-7xl/none text-forest-green font-blue-ocean-bold ">
               Premium Eco-Friendly Products
             </h1>
-            <p className="max-w-[600px] text-gray-800 md:text-xl">
+            <p className="max-w-[600px] text-earth-brown md:text-xl font-open-sans">
               Discover our extensive catalog of sustainable, high-quality disposable and household products designed for modern living.
             </p>
             <ul className="space-y-3 my-4">
@@ -95,18 +94,18 @@ export default function Hero() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-center gap-2 text-gray-800"
+                  className="flex items-center gap-2 text-earth-brown font-open-sans"
                 >
-                  <CheckCircle className="text-primary w-5 h-5 flex-shrink-0" />
+                  <CheckCircle className="text-forest-green w-5 h-5 flex-shrink-0" />
                   <span>{highlight}</span>
                 </motion.li>
               ))}
             </ul>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button size="lg" variant="default" onClick={() => setShowCatalog(true)}>
+              <Button size="lg" variant="default" onClick={() => setShowCatalog(true)} className="bg-forest-green hover:bg-forest-green/90 text-white font-montserrat">
                 View Catalog
               </Button>
-              <Button size="lg" variant="secondary">
+              <Button size="lg" variant="secondary" className="bg-soft-beige text-earth-brown hover:bg-soft-beige/90 font-montserrat">
                 Learn More
               </Button>
             </div>
@@ -179,7 +178,7 @@ export default function Hero() {
               className="bg-white rounded-lg p-6 max-w-5xl w-full h-[80vh] flex flex-col"
             >
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-2xl font-bold">Our Catalogs</h2>
+                <h2 className="text-2xl font-bold text-forest-green font-montserrat">Our Catalogs</h2>
                 <div className="flex items-center gap-2">
                   <button
                     onClick={zoomOut}
@@ -213,8 +212,8 @@ export default function Hero() {
                     <div key={index} className="flex flex-col gap-2">
                       <button
                         onClick={() => setSelectedCatalog(catalog.url)}
-                        className={`p-2 text-left rounded-md transition-colors ${
-                          selectedCatalog === catalog.url ? 'bg-primary text-white' : 'hover:bg-gray-100'
+                        className={`p-2 text-left rounded-md transition-colors font-montserrat ${
+                          selectedCatalog === catalog.url ? 'bg-forest-green text-white' : 'hover:bg-soft-beige text-earth-brown'
                         }`}
                       >
                         {catalog.name}
@@ -222,7 +221,7 @@ export default function Hero() {
                       <a
                         href={catalog.url}
                         download
-                        className="text-sm text-primary hover:underline"
+                        className="text-coral-orange hover:text-coral-orange/80 font-open-sans text-sm"
                       >
                         Download PDF
                       </a>

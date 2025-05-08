@@ -17,12 +17,13 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Hero />
+      <Partners />
       <ProductCategories />
       <Features />
       <ProductShowcase />
       <Distribution />
       <Sustainability />
-      <Partners />
+      
       <Contact />
     </main>
   )
