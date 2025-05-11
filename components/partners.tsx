@@ -15,7 +15,7 @@ export default function Partners() {
         >
           <h2 className="text-2xl font-bold">Trusted by Industry Leaders</h2>
         </motion.div>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-12 items-center justify-items-center opacity-75">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-12 items-center justify-items-center opacity-75">
           {['/images/logos/1.png', '/images/logos/2.png', '/images/logos/3.png', '/images/logos/4.png', '/images/logos/5.png'].map((logo, index) => (
             <motion.img
               key={index}
@@ -25,7 +25,7 @@ export default function Partners() {
               viewport={{ once: true }}
               src={logo}
               alt={`Partner ${index + 1}`}
-              className="h-34  object-contain"
+              className="lg:h-32 md:h-28 h-12 object-contain"
             />
           ))}
         </div>
