@@ -26,7 +26,7 @@ export default function Header() {
                 alt="Logo"
                 className="h-16 w-16"
               />
-              <span className="font-bold text-xl">PULPWOOD</span>
+              <span className="font-bold text-xl font-blue-ocean-bold">PULPWOOD TISSUE </span>
             </Link>
           </motion.div>
 
@@ -36,7 +36,7 @@ export default function Header() {
               { name: 'Home', path: '/' },
               { name: 'Products', path: '/products' },
               { name: 'About', path: '/about' },
-              { name: 'Contact', path: '/contact' }
+              { name: 'Gallery', path: '/gallery' }
             ].map((item, index) => (
               <motion.div
                 key={item.name}
@@ -52,15 +52,24 @@ export default function Header() {
                 </Link>
               </motion.div>
             ))}
+            {[
+             
+              { name: 'Contact', path: '/contact' }
+            ].map((item, index) => (
             <motion.div
+            key={item.name}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.5, delay:  index * 0.1}}
             >
-              <Button variant="default" size="sm">
-                Get Started
-              </Button>
+               <Link
+                  href={item.path}
+                  className="text-base font-medium transition-all text-white hover:text-white hover:scale-105 px-3 py-2 rounded-lg bg-forest-green hover:bg-forest-green"
+                >
+                  {item.name}
+                </Link>
             </motion.div>
+             ))}
           </nav>
 
           {/* Mobile Menu Button */}

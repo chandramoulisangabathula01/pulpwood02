@@ -4,6 +4,7 @@
 import { motion } from 'framer-motion'
 import { CheckCircle } from 'lucide-react'
 import { Button } from './ui/button'
+import Link from 'next/link'
 
 const benefits = [
   "Exclusive territory rights",
@@ -46,7 +47,9 @@ export default function Distribution() {
                 </motion.li>
               ))}
             </ul>
-            <Button size="lg" className="bg-forest-green hover:bg-forest-green/90 text-white font-montserrat">Apply Now</Button>
+            <Button size="lg" className="bg-forest-green hover:bg-forest-green/90 text-white font-montserrat" asChild>
+              <Link href="/contact">Contact Us</Link>
+            </Button>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}

@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, CheckCircle } from 'lucide-react'
+import Link from 'next/link'
 
 const images = [
   '/images/tissues.png?height=400&width=400',
@@ -81,7 +82,7 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="flex flex-col gap-4"
           >
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-7xl/none text-forest-green font-blue-ocean-bold ">
+            <h1 className="text-4xl mt-8 md:mt-40 lg:mt-20  font-bold tracking-tighter sm:text-5xl xl:text-7xl/none text-forest-green font-blue-ocean-bold ">
               Premium Eco-Friendly Products
             </h1>
             <p className="max-w-[600px] text-earth-brown md:text-xl font-open-sans">
@@ -102,11 +103,11 @@ export default function Hero() {
               ))}
             </ul>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button size="lg" variant="default" onClick={() => setShowCatalog(true)} className="bg-forest-green hover:bg-forest-green/90 text-white font-montserrat">
-                View Catalog
+              <Button size="lg" variant="default" asChild className="bg-forest-green hover:bg-forest-green/90 text-white font-montserrat">
+                <Link href="/catalog">View Catalog</Link>
               </Button>
               <Button size="lg" variant="secondary" className="bg-soft-beige text-earth-brown hover:bg-soft-beige/90 font-montserrat">
-                Learn More
+              <Link href="/products">Our Products</Link>
               </Button>
             </div>
           </motion.div>

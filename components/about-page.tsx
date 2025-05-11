@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Button } from './ui/button'
 import { Leaf, Recycle, Award } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function About() {
   return (
@@ -45,7 +46,7 @@ export default function About() {
                 Founded with a vision to revolutionize the household products industry, PULPWOOD has grown from a small family business to a global manufacturer of premium disposable and household essentials.
               </p>
               <p className="text-gray-600 leading-relaxed text-lg">
-                For over a decade, we&apos;ve been committed to creating products that combine quality, sustainability, and innovation. Our journey has been defined by our dedication to excellence and our passion for creating products that enhance everyday living.
+                For over a decade, we&#39;ve ben committed to creating products that combine quality, sustainability, and innovation. Our journey has been defined by our dedication to excellence and our passion for creating products that enhance everyday living.
               </p>
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -53,12 +54,14 @@ export default function About() {
                 transition={{ duration: 0.3, delay: 0.2 }}
                 className="pt-4"
               >
-                <Button
-                  className="bg-forest-green hover:bg-forest-green/90 text-white"
-                  size="lg"
-                >
-                  Learn More About Us
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    className="bg-forest-green hover:bg-forest-green/90 text-white"
+                    size="lg"
+                  >
+                    Contact Us
+                  </Button>
+                </Link>
               </motion.div>
             </motion.div>
             <motion.div
@@ -71,7 +74,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-forest-green/10 to-earth-brown/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <Image 
                 src="/images/pulpwood aboutus.png" 
-                alt="Our Story - Pulpwood&apos;s Journey" 
+                alt="Our Story - Pulpwood's Journey" 
                 className="object-cover w-full h-[500px] transform group-hover:scale-105 transition-transform duration-300"
                 width={800}
                 height={500}
@@ -197,7 +200,7 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-bold text-forest-green mb-2">{member.name}</h3>
                 <p className="text-earth-brown font-medium mb-4">{member.role}</p>
-                <p className="text-gray-600 italic text-sm">&quot;{member.quote}&quot;</p>
+                <p className="text-gray-600 italic text-sm">{member.quote}</p>
               </motion.div>
             ))}
           </div>
@@ -272,8 +275,9 @@ export default function About() {
             </div>
           </div>
         </section>
-        <div className="absolute inset-0 bg-[url('/images/texture-pattern.svg')] opacity-10" />
-        <div className="absolute inset-0 bg-black/20" />
+        {/* Fix: Added -z-10 to these overlays */}
+        <div className="absolute inset-0 bg-[url('/images/texture-pattern.svg')] opacity-10 -z-10" />
+        <div className="absolute inset-0 bg-black/20 -z-10" />
         <div className="container px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -287,10 +291,16 @@ export default function About() {
               Become a part of our growing network of distributors and partners
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary">Contact Us</Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white hover:bg-white hover:text-primary">
-                Learn More
-              </Button>
+              <Link href="/contact">
+                <Button size="lg" variant="secondary">
+                  Contact Us
+                </Button>
+              </Link>
+              <Link href="/gallery">
+                <Button size="lg" variant="outline" className="bg-transparent border-white hover:bg-white hover:text-primary">
+                  View Gallery
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

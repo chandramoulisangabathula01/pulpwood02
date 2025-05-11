@@ -18,9 +18,10 @@ export default function Contact() {
           viewport={{ once: true }}
           className="max-w-2xl mx-auto text-center"
         >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-forest-green">Contact Pulpwood</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-forest-green">PULP WOOD TISSUE PVT LTD
+          </h2>
           <p className="mt-4 text-earth-brown dark:text-earth-brown/80">
-            Interested in sustainable tissue and hygiene solutions? Reach out to Pulpwood for eco-friendly products, distribution, or partnership opportunities.
+            Pulp Wood Tissue Pvt. Ltd. is a Bangalore-based leading manufacturer of premium tissue products, eco-friendly disposable tableware, and high-quality household cleaning solutions. Founded in 2022 by three women entrepreneurs, the company emphasizes innovation, sustainability, and women empowerment—especially among economically weaker sections.
           </p>
         </motion.div>
         <motion.div

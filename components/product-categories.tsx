@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 // import { Card, CardContent } from '@/components/ui/card'
 import { Card, CardContent } from './ui/card'
+import Link from 'next/link'
 
 const categories = [
   {
@@ -53,26 +54,28 @@ export default function ProductCategories() {
               viewport={{ once: true }}
               className="w-full"
             >
-              <Card className="overflow-hidden group cursor-pointer w-full">
-                <CardContent className="p-0">
-                  <div className="relative">
-                    <div className={`absolute inset-0 bg-gradient-to-r ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                    <motion.img
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.3 }}
-                      src={category.image}
-                      alt={category.name}
-                      className="w-full h-48 object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">{category.name}</h3>
-                    <p className="text-gray-500 dark:text-gray-400">
-                      {category.description}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+              <Link href="/products" className="block w-full">
+                <Card className="overflow-hidden group cursor-pointer w-full">
+                  <CardContent className="p-0">
+                    <div className="relative">
+                      <div className={`absolute inset-0 bg-gradient-to-r ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                      <motion.img
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
+                        src={category.image}
+                        alt={category.name}
+                        className="w-full h-48 object-cover"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold mb-2">{category.name}</h3>
+                      <p className="text-gray-500 dark:text-gray-400">
+                        {category.description}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             </motion.div>
           ))}
         </div>

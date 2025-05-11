@@ -12,6 +12,7 @@ import Features from '@/components/features'
 import Distribution from '@/components/distribution'
 import Sustainability from '@/components/sustainability'
 import Partners from '@/components/partners'
+import WomenEmpowerment from '@/components/women-empowerment'
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
       <ProductShowcase />
       <Distribution />
       <Sustainability />
-      
+      <WomenEmpowerment />
       <Contact />
     </main>
   )

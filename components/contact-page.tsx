@@ -5,6 +5,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
+import Image from 'next/image'
 import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Instagram, Youtube, ArrowRight } from 'lucide-react'
 
 interface FormData {
@@ -91,21 +92,23 @@ export default function ContactPage() {
             <div className="relative z-10">
               {/* Logo and company name */}
               <div className="flex items-center mb-12">
-                <div className="text-2xl font-bold tracking-tight flex items-center">
-                  <span className="text-amber-600 mr-2">PULPWOOD</span> PRODUCTS
+                <div className="text-xl font-bold tracking-tight flex items-center">
+                  <Image src="/images/logo.png" alt="Company Logo" width={64} height={64} className="mr-4" />
+                  <span className="text-black mr-2 font-blue-ocean-bold">PULP WOOD TISSUE PVT LTD
+                  </span> 
                 </div>
               </div>
               
               <h2 className="text-4xl font-bold mb-6">Contact Us</h2>
               <p className="text-lg text-white/80 mb-8">
-                Looking for sustainable tissue and hygiene solutions? Reach out to Pulpwood for eco-friendly products and partnership opportunities.
+                Pulp Wood Tissue Pvt. Ltd., based in Bangalore, specializes in eco-friendly tissue products and cleaning solutions, founded by women entrepreneurs in 2022.
               </p>
               
               <div className="space-y-6 mb-12">
                 {[
-                  { icon: Mail, title: 'Email Us', content: 'info@pulpwood.in', href: 'mailto:info@pulpwood.in' },
-                  { icon: Phone, title: 'Call Us', content: '+91 98765 43210', href: 'tel:+919876543210' },
-                  { icon: MapPin, title: 'Visit Us', content: 'Pulpwood, 123 Green Avenue, Bengaluru, Karnataka, India', href: 'https://maps.google.com/?q=Pulpwood,123 Green Avenue,Bengaluru' },
+                  { icon: Mail, title: 'Email Us', content: 'customercare.pulpwood@gmail.com', href: 'mailto:customercare.pulpwood@gmail.com' },
+                  { icon: Phone, title: 'Call Us', content: '080-41217782 / +91-7019454698', href: 'tel:+919876543210' },
+                  { icon: MapPin, title: 'Visit Us', content: 'Survey No. 9/4, Site No. 6, Lakshmipura Post, Kachohalli Industrial Area, Bangalore, Karnataka - 560091', href: 'https://maps.google.com/?q=Pulpwood,123 Green Avenue,Bengaluru' },
                   { icon: Clock, title: 'Business Hours', content: 'Monday – Saturday: 9 AM - 6 PM', href: null },
                 ].map((item, index) => (
                   <motion.div
@@ -281,11 +284,11 @@ export default function ContactPage() {
               </div>
               <div className="flex items-start space-x-4">
                 <Phone className="w-6 h-6 text-earth-brown mt-1" />
-                <a href='tel:+919876543210' className="text-white">+91 98765 43210</a>
+                <a href='tel:+919876543210' className="text-white">080-41217782 / +91-7019454698</a>
               </div>
               <div className="flex items-start space-x-4">
                 <Mail className="w-6 h-6 text-earth-brown mt-1" />
-                <p className="text-white">info@pulpwood.in</p>
+                <p className="text-white">customercare.pulpwood@gmail.com</p>
               </div>
               <div className="flex items-start space-x-4">
                 <Clock className="w-6 h-6 text-earth-brown mt-1" />
